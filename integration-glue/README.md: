@@ -1,0 +1,14 @@
+# Integration Glue – LLM-Probe + Prompt-Extractor
+
+In einem Lauf: (1) LLM-Probe (Status/Latenz/Mini-Output → JSON/CSV), (2) Extraktion aller Dateien in `inbox/` → Prompts (MD/JSON).
+
+## Start
+python3 orchestrator.py
+# oder
+./run_daily.sh
+
+## Konfiguration (ENV)
+LLM_PROBE_CMD (Default: python3 ../llm-probe-addon-v0.2/llm_probe.py)
+PROMPT_EXTRACTOR_CMD (Default: python3 ../prompt-extractor/prompt_extractor_cli.py)
+INBOX_DIR=./inbox  OUT_DIR=./out  LOG_DIR=./logs
+EXTRACTOR_FLAGS="--no-strict-input"
